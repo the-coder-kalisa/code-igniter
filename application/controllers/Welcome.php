@@ -29,4 +29,7 @@ class Welcome extends CI_Controller {
 	public function home(){
 		echo "hello";
 	}
+	public function employee(){
+		$this->load->view("Employee");
+	}
 }
