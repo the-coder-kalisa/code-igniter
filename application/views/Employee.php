@@ -25,8 +25,8 @@ foreach ($k as $k) {
     <td><?= $k['firstname']?></td>
     <td><?= $k['lastname']?></td>
     <td><?= $k['gender']?></td>
-    <td><?= anchor("employee/edit".$k['studentid'], "edit")?></td>
-    <td><?= anchor("employee/delete/".$k['studentid'], "delete")?></td>
+    <td><a href="<?= base_url('employee/edit/' . $k['studentid']) ?>">edit</a></td>
+    <td><a href="<?= base_url('employee/delete/' . $k['studentid']) ?>">delete</a></td>
 </tr>
 <?php
 }
