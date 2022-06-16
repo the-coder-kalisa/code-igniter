@@ -41,14 +41,15 @@ class Welcome extends CI_Controller
 	}
 	public function store()
 	{
-		// $this->load->library('form_validation');
-		$this->form_validation->set_rules('email', 'Email Address', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required');
-		if ($this->form_validation->run()) {
-			$data = ['email' => $this->input->post('email'), 'password' => $this->input->post('password')];
-			print_r($data);
-		}else{
-		redirect(base_url('employee'));
-		}
+		$data = ["firstname" => $this->input->post("firstname"), "lastname" => $this->input->post("lastname"), "gender" => $this->input->post("gender")];
+		$this->load->model("EmployeeModel");
+		$student = new EmployeeModel();
+		$student->insert_student($data);
+		redirect(base_url("employee"));
+	}
+	public function delete($id){
+		$this->load->model("EmployeeModel");
+		$student = new EmployeeModel();
+		
 	}
 }
