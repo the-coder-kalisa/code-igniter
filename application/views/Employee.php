@@ -7,7 +7,8 @@
 </head>
 
 <body>
-    <?php if($k !== FALSE){ ?>
+    <?php
+     if(gettype($k) !== "integer"){ ?>
     <table border=1 style="border-collapse: collapse;">
    <tr>
      <th>id</th>
@@ -18,7 +19,7 @@
      <th>delete</th>
    </tr>
 
-       <?php
+<?php
 foreach ($k as $k) {
 ?>
 <tr>
@@ -33,8 +34,16 @@ foreach ($k as $k) {
 }
 ?>
     </table>
-    <?php }?>
-    <form action="<?=base_url('employee/store')?>" method="post">
+    <?php }
+    $result = "";
+    if(gettype($k) === "integer"){
+        $result = base_url("employee/edit/$k");
+    }
+    else{
+        $result = base_url("employee/store");
+    }
+    ?>
+    <form action="<?=$result?>" method="post">
     <input type="text" name="firstname" placeholder="firstname"/>
     <input type="text" name="lastname" placeholder="lastname"/>
     <input type="radio" value="male" name="gender"/>male

@@ -54,9 +54,20 @@ class Welcome extends CI_Controller
 		redirect(base_url("employee"));
 	}
 	public function edit($id){
+		echo $id;	
 		$this->load->model("EmployeeModel");
-		$this->load->view("Employee");
-		// $student = new EmployeeModel();
-		// $student->update_student($id, $data);
+		$k["k"] = $id;
+		$this->load->view("Employee", $k);
+		$student = new EmployeeModel();
+		$stu = [
+			"firstname" => $this->input->post("firstname"),
+			"lastname" => $this->input->post("lastname"),
+			"gender" => $this->input->post("gender")
+		];
+		if($stu["firstname"] !== NULL) {
+
+			$student->update_student($id, $stu);
+			redirect("employee");
+		}
 	}
 }
