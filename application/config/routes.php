@@ -7,4 +7,5 @@ $route['abouts'] = 'welcome/demo';
 $route['404_override'] = '';
 $route['blog/(:num)'] = 'PageController/blog/$1';
 $route['user/(:num)'] = 'StudentController/show/$1';
+$route['db/(:any)'] = 'StudentController/show_Student/$1';
 $route['translate_uri_dashes'] = FALSE;
