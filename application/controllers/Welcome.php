@@ -51,11 +51,12 @@ class Welcome extends CI_Controller
 		$this->load->model("EmployeeModel");
 		$student = new EmployeeModel();
 		$student->delete_student($id);
-	}
-	public function update($id){
-		$this->load->model("EmployeeModel");
 		redirect(base_url("employee"));
-		$student = new EmployeeModel();
-		$student->update_student($id, $data);
+	}
+	public function edit($id){
+		$this->load->model("EmployeeModel");
+		$this->load->view("Employee");
+		// $student = new EmployeeModel();
+		// $student->update_student($id, $data);
 	}
 }

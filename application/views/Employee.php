@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    <?php if($k !== FALSE){ ?>
     <table border=1 style="border-collapse: collapse;">
    <tr>
      <th>id</th>
@@ -32,6 +33,7 @@ foreach ($k as $k) {
 }
 ?>
     </table>
+    <?php }?>
     <form action="<?=base_url('employee/store')?>" method="post">
     <input type="text" name="firstname" placeholder="firstname"/>
     <input type="text" name="lastname" placeholder="lastname"/>

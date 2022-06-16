@@ -4,10 +4,11 @@ class EmployeeModel extends CI_Model{
         return $this->db->insert('student', $student);
     }
     public function delete_student($id){
-        return $this->db->delete('student', $id);
+        $this -> db -> where('studentid', $id);
+        return $this -> db -> delete('student');
     }
     public function update_student($id, $student) {
-        return $this->db->update('student', $id, $student);
+        return $this->db->entry_update('student', $id, $student);
     }
 }
 ?>
