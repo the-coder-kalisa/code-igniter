@@ -19,5 +19,9 @@ class PageController extends CI_Controller
         echo $blog_url;
         $this->load->view('blogview');
     }
+    public function demo(){
+        $data['title'] = "Giovanni";
+        $this->load->view("Hello", $data);
+    }
 }
 ?>
