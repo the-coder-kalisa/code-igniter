@@ -8,7 +8,7 @@
 
 <body>
     <?php
-     if(gettype($k) !== "integer"){ ?>
+     if(gettype($k) !== "string"){ ?>
     <table border=1 style="border-collapse: collapse;">
    <tr>
      <th>id</th>
@@ -36,7 +36,7 @@ foreach ($k as $k) {
     </table>
     <?php }
     $result = "";
-    if(gettype($k) === "integer"){
+    if(gettype($k) === "string"){
         $result = base_url("employee/edit/$k");
     }
     else{

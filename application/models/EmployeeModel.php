@@ -8,10 +8,9 @@ class EmployeeModel extends CI_Model{
         return $this -> db -> delete('student');
     }
     public function update_student($id, $stu) {
-        $data = array("firstname"=>"kalfasdfafdafda");
-        $this->db->set($data);
-        $this->db->where('studentid',$id);
-        $this->db->update("student",$data);
+        $this->db->set($stu);
+        $this->db->where('studentid',(int)$id);
+        $this->db->update("student",$stu);
     }
 }
 ?>

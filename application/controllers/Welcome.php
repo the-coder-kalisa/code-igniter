@@ -54,7 +54,6 @@ class Welcome extends CI_Controller
 		redirect(base_url("employee"));
 	}
 	public function edit($id){
-		echo $id;	
 		$this->load->model("EmployeeModel");
 		$k["k"] = $id;
 		$this->load->view("Employee", $k);

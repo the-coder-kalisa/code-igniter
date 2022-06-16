@@ -11,5 +11,5 @@ $route['db/(:any)'] = 'StudentController/show_Student/$1';
 $route['employee']='Welcome/employee';
 $route['employee/store'] = 'Welcome/store';
 $route['employee/edit/(:num)']='Welcome/edit/$1';
-$route['employee/delete/(:num)'] ='Welcome/delete/  $1';
+$route['employee/delete/(:num)'] ='Welcome/delete/$1';
 $route['translate_uri_dashes'] = FALSE;
