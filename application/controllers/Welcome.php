@@ -35,7 +35,6 @@ class Welcome extends CI_Controller
 	public function employee()
 	{
 		$data = $this->db->get('student');
-		// print_r($data->result_array());
 		$stu['k'] =$data->result_array();
 		$this->load->view("Employee", $stu);
 	}
